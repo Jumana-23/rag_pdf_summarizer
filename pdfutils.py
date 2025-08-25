@@ -1,5 +1,7 @@
 # cleaning text function 
 import re 
+# the function line simply hints that the received text is a string and 
+# the output will also be a string 
 def clean_text(text:str) -> str:
     text = text.strip()
     text = text.replace("\n", " ")
@@ -10,5 +12,13 @@ def clean_text(text:str) -> str:
     text = re.sub(r"\(.*?\)", "", text)  # remove noisy parentheticals (use with caution!)
 
     return text 
-def extract_chunks_from_pdf(path_to_pdf, chunk = 300) : 
+""" line below is called a function signature 
+    text: str -> first parameter is a string text 
+    strategy: str = "paragraph" -> if user doesnt specify how to chunk we assume default is paragraph 
+    chunk_size : int = 200 -> another default parameter 
+    list[dict] -> return type annotation 
+    """
+def chunk_text(text: str, strategy: str = "paragraph", chunk_size: int = 200) -> list[dict]:
+    
+ 
     
